@@ -63,7 +63,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">业务完成日期从</span>
                         </div>
-                        <input type='text' name="complete_begin" class="form-control date" />
+                        <input type='text' name="complete_begin" class="form-control date"  autocomplete="off"/>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                         </div>
@@ -72,7 +72,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">业务完成日期到</span>
                         </div>
-                        <input type='text' name="complete_end" class="form-control date" />
+                        <input type='text' name="complete_end" class="form-control date"  autocomplete="off"/>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                         </div>
@@ -81,7 +81,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">考核日期从</span>
                         </div>
-                        <input type='text' name="check_begin" class="form-control date" />
+                        <input type='text' name="check_begin" class="form-control date"  autocomplete="off"/>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                         </div>
@@ -90,7 +90,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">考核日期到</span>
                         </div>
-                        <input type='text' name="check_end" class="form-control date" />
+                        <input type='text' name="check_end" class="form-control date"  autocomplete="off"/>
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
                         </div>
@@ -231,14 +231,15 @@
                 detailView: false,                   //是否显示父子表
                 // fixedColumns: true,                  //是否固定列
                 // fixedNumber: 1,                     //固定列数
+                //showFooter:true,                        //显示底部汇总栏
                 columns: [
                     {
                         field: 'department',
-                        title: '揽货部门'
+                        title: '揽货部门',
                     },
                     {
                         field: 'sales',
-                        title: '揽货人'
+                        title: '揽货人',
                     },
                     {
                         field: 'consignor',
@@ -246,14 +247,28 @@
                     },
                     {
                         field: 'receive',
-                        title: '本位币不含税收入'
+                        title: '本位币不含税收入',
                     },
                     {
                         field: 'profit',
                         title: '本位币不含税利润'
                     }
                 ],
-
+                onLoadSuccess: function (data) {  //加载成功时执行
+                    var sum_1 = 0;
+                    var sum_2 = 0;
+                    for (var o in data.rows) {
+                        sum_1 += parseFloat(data.rows[o].receive);
+                        sum_2 += parseFloat(data.rows[o].profit);
+                    }
+                    var rows = [];
+                    rows.push({
+                        department: "合计:",
+                        receive: parseInt(sum_1),
+                        profit: parseInt(sum_2)
+                    });
+                    $('#ArbetTable').bootstrapTable('append', rows);
+                }
             });
 
         };
