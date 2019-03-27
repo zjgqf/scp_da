@@ -8,7 +8,6 @@ use App\Exports\AccountExport;
 
 class AccountsController extends Controller
 {
-
     public function index()
     {
         return view('dingtalk.accounts.index');
@@ -16,16 +15,17 @@ class AccountsController extends Controller
 
     public function show(Request $request)
     {
-        $field = $request->all();
-        $field['department'] = substr($field['department'], strpos($field['department'], '/') + 1) ;
-        $field['user']  = substr($field['user'], strpos($field['user'], '/') + 1) ;
-        $field['complete_begin'] = str_replace('-','',$field['complete_begin']);
-        $field['complete_end'] = str_replace('-','',$field['complete_end']);
-        $field['check_begin'] = str_replace('-','',$field['check_begin']);
-        $field['check_end'] = str_replace('-','',$field['check_end']);
+        $data = $request->all();
+        $field['department'] = $data['department'] ? substr($data['department'], strpos($data['department'], '/') + 1) : null;
+        $field['user']  = $data['user'] ? substr($data['user'], strpos($data['user'], '/') + 1) : null ;
+        $field['complete_begin'] = $data['complete_begin'] ? str_replace('-','',$data['complete_begin']) : null;
+        $field['complete_end'] = $data['complete_end'] ? str_replace('-','',$data['complete_end']) : null;
+        $field['check_begin'] = $data['check_begin'] ? str_replace('-','',$data['check_begin']) : null;
+        $field['check_end'] = $data['check_end'] ? str_replace('-','',$data['check_end']) : null;
 
-        if(empty($field['check_begin']) || empty($field['check_end'])) {
-            $result['total'] = '0';
+        $check = array_values($field);
+        if($this->emptyArray($check)){
+            $result['total'] = 0;
             $result['rows'] = null;
             return $result;
         }
@@ -75,22 +75,18 @@ class AccountsController extends Controller
                         })
                         ->when($field['check_begin'], function ($query) use ($field) {
                             return $query->whereRaw('SUBSTR(BCFR.CHECK_DATE,1,8) >= ?', [$field['check_begin']]);
-                        }, function ($query) {
-                            return $query->where('1', '=', '2');
                         })
                         ->when($field['check_end'], function ($query) use ($field) {
                             return $query->whereRaw('SUBSTR(BCFR.CHECK_DATE,1,8) <= ?', [$field['check_end']]);
-                        },function ($query) {
-                            return $query->where('1', '=', '2');
                         })
                         ->groupBy('BCOR.PUBLIC_CANVASSION_DEPARTMENT', 'BCOR.PUBLIC_SALES_NAME', 'BCOR.PUBLIC_CONSIGNOR_NAME')
                         ->orderBy('BCOR.PUBLIC_CANVASSION_DEPARTMENT')
                         ->orderBy('BCOR.PUBLIC_SALES_NAME')
                         ->orderBy('BCOR.PUBLIC_CONSIGNOR_NAME')
-                        ->paginate($field['limit']);
+                        ->paginate($data['limit']);
         //$accounts = $accounts->appends($field);
-        $result['total'] = $accounts->total();
-        $result['rows'] = $accounts->items();
+        $result['total'] = $accounts->total() ?? 0;
+        $result['rows'] = $accounts->items() ?? null;
         return $result;
         //$headers = ['揽货部门', '揽货人', '客户名称', '本位币不含税应收', '本位币含税利润'];
         //return view('dingtalk.accounts.index',['accounts' => $accounts,'headers' => $headers]);
@@ -99,17 +95,17 @@ class AccountsController extends Controller
 
     public function export(Request $request)
     {
-        $field = $request->all();
-        $field['department'] = substr($field['department'], strpos($field['department'], '/') + 1) ;
-        $field['user']  = substr($field['user'], strpos($field['user'], '/') + 1) ;
-        $field['complete_begin'] = str_replace('-','',$field['complete_begin']);
-        $field['complete_end'] = str_replace('-','',$field['complete_end']);
-        $field['check_begin'] = str_replace('-','',$field['check_begin']);
-        $field['check_end'] = str_replace('-','',$field['check_end']);
+        $data = $request->all();
+        $field['department'] = $data['department'] ? substr($data['department'], strpos($data['department'], '/') + 1) : null;
+        $field['user']  = $data['user'] ? substr($data['user'], strpos($data['user'], '/') + 1) : null ;
+        $field['complete_begin'] = $data['complete_begin'] ? str_replace('-','',$data['complete_begin']) : null;
+        $field['complete_end'] = $data['complete_end'] ? str_replace('-','',$data['complete_end']) : null;
+        $field['check_begin'] = $data['check_begin'] ? str_replace('-','',$data['check_begin']) : null;
+        $field['check_end'] = $data['check_end'] ? str_replace('-','',$data['check_end']) : null;
 
-
-        if(empty($field['check_begin']) || empty($field['check_end'])) {
-            return redirect()->route('accounts.search');
+        $check = array_values($field);
+        if($this->emptyArray($check)){
+            return redirect()->route('accounts.index')->with('danger','查询条件不能为空！');
         }
 
         $accounts = $this->oracle->table('V_FREIGHT_ZJG as BCFR')
@@ -173,6 +169,15 @@ class AccountsController extends Controller
         return Excel::download(new AccountExport($accounts),'到账利润.xlsx');
     }
 
-
+    function emptyArray($array) {
+        $is_empty = true;
+        foreach($array as $a){
+            if(!empty($a)){
+                $is_empty = false;
+                break;
+            }
+        }
+        return $is_empty;
+    }
 
 }

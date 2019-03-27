@@ -40,6 +40,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            @include('layouts._message')
             <button type="button" class="btn btn-sm btn-outline-secondary btn-primary btn-block disabled mb-2" data-toggle="collapse"
                     data-target="#collapse">收起</button>
 
@@ -261,18 +262,19 @@
                         sum_1 += parseFloat(data.rows[o].receive);
                         sum_2 += parseFloat(data.rows[o].profit);
                     }
-                    var rows = [];
-                    rows.push({
-                        department: "合计:",
-                        receive: parseInt(sum_1),
-                        profit: parseInt(sum_2)
-                    });
-                    $('#ArbetTable').bootstrapTable('append', rows);
+                    if (sum_1+sum_2 > 0) {
+                        var rows = [];
+                        rows.push({
+                            department: "合计:",
+                            receive: parseInt(sum_1),
+                            profit: parseInt(sum_2)
+                        });
+                        $('#ArbetTable').bootstrapTable('append', rows);
+                    }
                 }
             });
 
         };
-
 
         //得到查询的参数
         oTableInit.queryParams = function (params) {

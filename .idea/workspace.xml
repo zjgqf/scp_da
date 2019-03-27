@@ -4,6 +4,8 @@
     <list default="true" id="b8e4f421-b13d-46a7-bfc2-dc1a4daefcca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AccountsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/dingtalk/accounts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dingtalk/accounts/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,14 +21,17 @@
     <session id="365011386">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -39,19 +44,19 @@
           <entry key="js" value="8" />
           <entry key="json" value="1" />
           <entry key="md" value="2" />
-          <entry key="php" value="39" />
+          <entry key="php" value="45" />
           <entry key="scss" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="17" />
+          <entry key="Blade" value="20" />
           <entry key="CSS" value="6" />
           <entry key="HTML" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="8" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="22" />
+          <entry key="PHP" value="25" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="3" />
         </counts>
@@ -65,19 +70,19 @@
           <entry key="js" value="63" />
           <entry key="json" value="2" />
           <entry key="md" value="27" />
-          <entry key="php" value="10130" />
+          <entry key="php" value="11140" />
           <entry key="scss" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="4815" />
+          <entry key="Blade" value="4873" />
           <entry key="CSS" value="1" />
           <entry key="HTML" value="7" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="63" />
           <entry key="Markdown" value="27" />
-          <entry key="PHP" value="5315" />
+          <entry key="PHP" value="6267" />
           <entry key="PLAIN_TEXT" value="49" />
           <entry key="SCSS" value="2" />
         </counts>
@@ -89,11 +94,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4200">
-              <caret line="175" selection-start-line="175" selection-end-line="175" />
+            <state relative-caret-position="336">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="51" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -113,8 +136,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/dingtalk/accounts/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="322" column="25" lean-forward="true" selection-start-line="322" selection-start-column="25" selection-end-line="322" selection-end-column="25" />
+            <state relative-caret-position="528">
+              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/_message.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-216" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1176">
+              <caret line="196" column="67" lean-forward="true" selection-start-line="196" selection-start-column="67" selection-end-line="196" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -156,7 +209,6 @@
         <option value="$USER_HOME$/Desktop/logistics.html" />
         <option value="$PROJECT_DIR$/public/js/aa.js" />
         <option value="$PROJECT_DIR$/public/css/bootstrap3-typeahead.css" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/config/oracle.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ScpUsersController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
@@ -172,9 +224,11 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/app/Exports/AccountExport.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AccountsController.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/_message.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dingtalk/accounts/index.blade.php" />
       </list>
     </option>
@@ -291,11 +345,11 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="763" />
-    <option name="y" value="139" />
-    <option name="width" value="1188" />
-    <option name="height" value="824" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="484" />
+    <option name="y" value="72" />
+    <option name="width" value="1353" />
+    <option name="height" value="921" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -303,7 +357,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,6 +391,11 @@
             <path>
               <item name="zjg_dingtalk" type="b2602c69:ProjectViewProjectNode" />
               <item name="zjg_dingtalk" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zjg_dingtalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zjg_dingtalk" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -345,6 +403,13 @@
               <item name="zjg_dingtalk" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zjg_dingtalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zjg_dingtalk" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zjg_dingtalk" type="b2602c69:ProjectViewProjectNode" />
@@ -361,10 +426,23 @@
               <item name="dingtalk" type="462c0819:PsiDirectoryNode" />
               <item name="accounts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="zjg_dingtalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zjg_dingtalk" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zjg_dingtalk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zjg_dingtalk" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,18 +490,22 @@
       <workItem from="1552529810060" duration="19000" />
       <workItem from="1552529933350" duration="473000" />
       <workItem from="1552530642893" duration="110447000" />
-      <workItem from="1553154225267" duration="1088000" />
+      <workItem from="1553154225267" duration="2473000" />
+      <workItem from="1553234748412" duration="1364000" />
+      <workItem from="1553569843504" duration="5750000" />
+      <workItem from="1553602426816" duration="3625000" />
+      <workItem from="1553646929818" duration="2396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124351000" />
+    <option name="totallyTimeSpent" value="138871000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="763" y="139" width="1188" height="824" extended-state="0" />
+    <frame x="484" y="72" width="1353" height="921" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25797874" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22737472" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -505,22 +587,13 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/_react-bootstrap-typeahead@3.4.1@react-bootstrap-typeahead/README.md" />
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/logistics.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="76" column="6850" selection-start-line="76" selection-start-column="6850" selection-end-line="76" selection-end-column="6850" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/logistics.html" />
     <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -536,13 +609,7 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/jq22pd-be1a936c-2d96-11e4-8b02-000c29f61318/jquery-autocompleter-master/index.html" />
-    <entry file="file://$PROJECT_DIR$/../dingtalk/public/layui/css/layui.mobile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="362" selection-start-line="1" selection-start-column="95" selection-end-line="1" selection-end-column="362" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../dingtalk/public/layui/css/layui.mobile.css" />
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1728" />
@@ -550,11 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-792">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-792" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/aa.js" />
@@ -576,13 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="176" column="46" selection-start-line="176" selection-start-column="46" selection-end-line="176" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -628,9 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -638,16 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="16" selection-end-column="97" />
         </state>
       </provider>
     </entry>
@@ -676,27 +719,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="336">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4200">
-          <caret line="175" selection-start-line="175" selection-end-line="175" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -710,10 +746,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="196" column="67" lean-forward="true" selection-start-line="196" selection-start-column="67" selection-end-line="196" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="44" column="33" lean-forward="true" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/_message.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dingtalk/accounts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="322" column="25" lean-forward="true" selection-start-line="322" selection-start-column="25" selection-end-line="322" selection-end-column="25" />
+        <state relative-caret-position="528">
+          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
         </state>
       </provider>
     </entry>
