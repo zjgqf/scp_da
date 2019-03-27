@@ -152,20 +152,16 @@ class AccountsController extends Controller
                         })
                         ->when($field['check_begin'], function ($query) use ($field) {
                             return $query->whereRaw('SUBSTR(BCFR.CHECK_DATE,1,8) >= ?', [$field['check_begin']]);
-                        }, function ($query) {
-                            return $query->where('1', '=', '2');
                         })
                         ->when($field['check_end'], function ($query) use ($field) {
                             return $query->whereRaw('SUBSTR(BCFR.CHECK_DATE,1,8) <= ?', [$field['check_end']]);
-                        },function ($query) {
-                            return $query->where('1', '=', '2');
                         })
                         ->groupBy('BCOR.PUBLIC_CANVASSION_DEPARTMENT', 'BCOR.PUBLIC_SALES_NAME', 'BCOR.PUBLIC_CONSIGNOR_NAME')
                         ->orderBy('BCOR.PUBLIC_CANVASSION_DEPARTMENT')
                         ->orderBy('BCOR.PUBLIC_SALES_NAME')
                         ->orderBy('BCOR.PUBLIC_CONSIGNOR_NAME')
                         ->get();
-
+        dd($accounts);
         return Excel::download(new AccountExport($accounts),'到账利润.xlsx');
     }
 
