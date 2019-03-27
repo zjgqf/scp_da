@@ -18,10 +18,10 @@ class AccountsController extends Controller
         $data = $request->all();
         $field['department'] = $data['department'] ? substr($data['department'], strpos($data['department'], '/') + 1) : null;
         $field['user']  = $data['user'] ? substr($data['user'], strpos($data['user'], '/') + 1) : null ;
-        $field['complete_begin'] = $data['complete_begin'] ? str_replace('-','',$data['complete_begin']) : null;
-        $field['complete_end'] = $data['complete_end'] ? str_replace('-','',$data['complete_end']) : null;
-        $field['check_begin'] = $data['check_begin'] ? str_replace('-','',$data['check_begin']) : null;
-        $field['check_end'] = $data['check_end'] ? str_replace('-','',$data['check_end']) : null;
+        $field['complete_begin'] = $data['complete_begin'] ?: null;
+        $field['complete_end'] = $data['complete_end'] ?: null;
+        $field['check_begin'] = $data['check_begin'] ?: null;
+        $field['check_end'] = $data['check_end'] ?: null;
 
         $check = array_values($field);
         if($this->emptyArray($check)){
@@ -98,10 +98,10 @@ class AccountsController extends Controller
         $data = $request->all();
         $field['department'] = $data['department'] ? substr($data['department'], strpos($data['department'], '/') + 1) : null;
         $field['user']  = $data['user'] ? substr($data['user'], strpos($data['user'], '/') + 1) : null ;
-        $field['complete_begin'] = $data['complete_begin'] ? str_replace('-','',$data['complete_begin']) : null;
-        $field['complete_end'] = $data['complete_end'] ? str_replace('-','',$data['complete_end']) : null;
-        $field['check_begin'] = $data['check_begin'] ? str_replace('-','',$data['check_begin']) : null;
-        $field['check_end'] = $data['check_end'] ? str_replace('-','',$data['check_end']) : null;
+        $field['complete_begin'] = $data['complete_begin'] ?: null;
+        $field['complete_end'] = $data['complete_end'] ?: null;
+        $field['check_begin'] = $data['check_begin'] ?: null;
+        $field['check_end'] = $data['check_end'] ?: null;
 
         $check = array_values($field);
         if($this->emptyArray($check)){

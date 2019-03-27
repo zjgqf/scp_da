@@ -17,7 +17,7 @@
     <!-- Js -->
     <script src="{{ mix('js/app.js') }}"></script>
     {{--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}}
-    <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datetimepicker.js') }}"></script>
     <script src="{{ asset('js/bootstrap-datetimepicker.zh-CN.js') }}"></script>
     <script src="https://cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.14.1/dist/bootstrap-table.min.js"></script>
@@ -112,9 +112,14 @@
 </html>
 <script>
     $(function () {
+        // $(".date").on('blur',function() {
+        //     var format = $(this).val().replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
+        //     $(this).attr("value", format);
+        // });
+
         //日期选项
         $('.date').datetimepicker({
-            format: 'yyyy-mm-dd',
+            format: 'yyyymmdd',
             autoclose: true,
             todayBtn: true,
             closeBtn: true,
@@ -123,6 +128,7 @@
             maxView: 3,
             minView: 2,
             clearBtn:true,
+            forceParse:false,
             endDate:new Date(),
         });
         //autocomplete
