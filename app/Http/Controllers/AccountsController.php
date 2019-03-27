@@ -161,7 +161,6 @@ class AccountsController extends Controller
                         ->orderBy('BCOR.PUBLIC_SALES_NAME')
                         ->orderBy('BCOR.PUBLIC_CONSIGNOR_NAME')
                         ->get();
-        dd($accounts);
         return Excel::download(new AccountExport($accounts),'到账利润.xlsx');
     }
 
