@@ -41,6 +41,7 @@ class SinglesController extends Controller
                     ->where('IS_VIRTUAL_ORDER', 'N')
                     ->where('IS_DELETED', 'N')
                     ->where('PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
+                    ->where('PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
                     ->when($field['user'], function ($query) use ($field) {
                         return $query->where('PUBLIC_SALES_CODE', '=', $field['user']);
                     })
@@ -88,6 +89,7 @@ class SinglesController extends Controller
                     ->where('IS_VIRTUAL_ORDER', 'N')
                     ->where('IS_DELETED', 'N')
                     ->where('PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
+                    ->where('PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
                     ->when($field['user'], function ($query) use ($field) {
                         return $query->where('PUBLIC_SALES_CODE', '=', $field['user']);
                     })

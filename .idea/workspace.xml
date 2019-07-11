@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8e4f421-b13d-46a7-bfc2-dc1a4daefcca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exports/SingleExport.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exports/SingleExport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SinglesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SinglesController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +18,8 @@
     <session id="365011386">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="2" />
@@ -31,7 +31,7 @@
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -71,7 +71,7 @@
           <entry key="js" value="71" />
           <entry key="json" value="2" />
           <entry key="md" value="27" />
-          <entry key="php" value="12155" />
+          <entry key="php" value="12183" />
           <entry key="scss" value="2" />
         </counts>
       </usages-collector>
@@ -83,7 +83,7 @@
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="71" />
           <entry key="Markdown" value="27" />
-          <entry key="PHP" value="6810" />
+          <entry key="PHP" value="6838" />
           <entry key="PLAIN_TEXT" value="49" />
           <entry key="SCSS" value="2" />
         </counts>
@@ -95,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="4401">
               <caret line="163" column="73" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="73" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
@@ -122,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SinglesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+            <state relative-caret-position="432">
+              <caret line="43" column="65" lean-forward="true" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
               <folding>
                 <element signature="e#40#69#0#PHP" expanded="true" />
               </folding>
@@ -137,7 +137,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Exports/AccountExport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
+            <state relative-caret-position="918">
               <caret line="34" column="5" selection-start-line="9" selection-start-column="3" selection-end-line="34" selection-end-column="5" />
               <folding>
                 <element signature="e#31#77#0#PHP" expanded="true" />
@@ -146,11 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Exports/SingleExport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="754">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#31#77#0#PHP" expanded="true" />
               </folding>
@@ -248,8 +248,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/dingtalk/accounts/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/dingtalk/singles/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SinglesController.php" />
         <option value="$PROJECT_DIR$/app/Exports/SingleExport.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SinglesController.php" />
       </list>
     </option>
   </component>
@@ -528,18 +528,19 @@
       <workItem from="1559204099619" duration="94000" />
       <workItem from="1561018318832" duration="187000" />
       <workItem from="1562726245570" duration="7336000" />
-      <workItem from="1562824333668" duration="152000" />
+      <workItem from="1562824333668" duration="712000" />
+      <workItem from="1562825685415" duration="1961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158310000" />
+    <option name="totallyTimeSpent" value="160831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1945629" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1716418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -786,10 +787,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4401">
+          <caret line="163" column="73" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="73" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Exports/AccountExport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="34" column="5" selection-start-line="9" selection-start-column="3" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="e#31#77#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -810,49 +838,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PagesController.php">
+    <entry file="file://$PROJECT_DIR$/app/Exports/SingleExport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="51" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AccountsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="163" column="73" selection-start-line="163" selection-start-column="30" selection-end-line="163" selection-end-column="73" />
+        <state relative-caret-position="754">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#31#77#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SinglesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+        <state relative-caret-position="432">
+          <caret line="43" column="65" lean-forward="true" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
           <folding>
             <element signature="e#40#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exports/AccountExport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="34" column="5" selection-start-line="9" selection-start-column="3" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exports/SingleExport.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="e#31#77#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
