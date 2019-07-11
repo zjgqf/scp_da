@@ -28,8 +28,8 @@ class SingleExport implements FromCollection,WithHeadings
         return [
             '揽货人',
             '业务子类',
-            '票数',
             'TEU',
+            '票数',
             '业务日期汇率不含税收入',
             '业务日期汇率不含税成本',
             '业务日期汇率毛利',
