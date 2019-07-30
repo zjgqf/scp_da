@@ -18,7 +18,11 @@ Route::post('/scp/accounts/export','AccountsController@export')->name('accounts.
 
 Route::get('/scp/single', 'SinglesController@index')->name('singles.index');
 Route::get('/scp/singles', 'SinglesController@show')->name('singles.show');
-Route::post('/scp/singes/export', 'SinglesController@export')->name('singles.export');
+Route::post('/scp/singles/export', 'SinglesController@export')->name('singles.export');
+
+Route::get('/scp/express', 'ExpressesController@index')->name('expresses.index');
+Route::get('/scp/expresses', 'ExpressesController@show')->name('expresses.show');
+Route::post('/scp/expresses/export', 'ExpressesController@export')->name('expresses.export');
 
 Auth::routes();
 
