@@ -47,7 +47,7 @@
                 <div class="mb-2">
                     <div class='input-group input-group-sm mb-2'>
                         <div class="input-group-prepend">
-                            <span class="input-group-text">业务完成日期从</span>
+                            <span class="input-group-text">业务日期从</span>
                         </div>
                         <input type='text' name="complete_begin" class="form-control date"  autocomplete="off"/>
                         <div class="input-group-append">
@@ -56,7 +56,7 @@
                     </div>
                     <div class='input-group input-group-sm mb-2'>
                         <div class="input-group-prepend">
-                            <span class="input-group-text">业务完成日期到</span>
+                            <span class="input-group-text">业务日期到</span>
                         </div>
                         <input type='text' name="complete_end" class="form-control date"  autocomplete="off"/>
                         <div class="input-group-append">
