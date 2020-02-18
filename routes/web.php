@@ -28,4 +28,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/shipmessage', 'ShipMessageController@index')->name('shipMessage.index');
+Route::post('/shipmessage', 'ShipMessageController@show')->name('shipMessage.show');
+Route::get('/shipmeaasge/downlad/{file_path}', 'ShipMessageController@download')->name('shipMessage.download');
+
 

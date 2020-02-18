@@ -29,32 +29,30 @@ class SinglesController extends Controller
 
         //查询单票费用
         $accounts = $this->oracle->table('VW_BC_PUBLIC_ORDER_NO_DEL')
-                    ->selectRaw('PUBLIC_SALES_NAME AS sales,
+        ->selectRaw('PUBLIC_SALES_NAME AS sales,
                                  PUBLIC_SUB_BUSINESS_TYPE_NAME AS business,
                                  SUM(PUBLIC_CTN_TEU) AS teu,
                                  COUNT(BC_PUBLIC_ORDER_ID) AS total,
-                            
-                    
                                  SUM(FNC_BC_PUBLIC_ORDER_SINGLE(BC_PUBLIC_ORDER_ID, \'BASE_BUSINESS_SRS\')) AS business_srs,
                                  SUM(FNC_BC_PUBLIC_ORDER_SINGLE(BC_PUBLIC_ORDER_ID, \'BASE_BUSINESS_SPS\')) AS business_sps,
                                  SUM(FNC_BC_PUBLIC_ORDER_SINGLE(BC_PUBLIC_ORDER_ID, \'BASE_BUSINESS_SRS\')) -  SUM(FNC_BC_PUBLIC_ORDER_SINGLE(BC_PUBLIC_ORDER_ID, \'BASE_BUSINESS_SPS\')) AS profit')
-                    ->where('IS_VIRTUAL_ORDER', 'N')
-                    ->where('IS_DELETED', 'N')
-                    ->where('PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
-                    ->where('PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
-                    ->when($field['user'], function ($query) use ($field) {
-                        return $query->where('PUBLIC_SALES_CODE', '=', $field['user']);
-                    })
-                    ->when($field['complete_begin'], function ($query) use ($field) {
-                        return $query->where('PUBLIC_COMPLETION_DATE', '>=', $field['complete_begin']);
-                    })
-                    ->when($field['complete_end'], function ($query) use ($field) {
-                        return $query->where('PUBLIC_COMPLETION_DATE', '<=', $field['complete_end']);
-                    })
-                    ->groupBy('PUBLIC_SALES_NAME', 'PUBLIC_SUB_BUSINESS_TYPE_NAME')
-                    ->orderBy('PUBLIC_SALES_NAME')
-                    ->orderBy('PUBLIC_SUB_BUSINESS_TYPE_NAME')
-                    ->paginate($data['limit']);
+        ->where('IS_VIRTUAL_ORDER', 'N')
+        ->where('IS_DELETED', 'N')
+        ->where('PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
+        ->where('PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
+        ->when($field['user'], function ($query) use ($field) {
+            return $query->where('PUBLIC_SALES_CODE', '=', $field['user']);
+        })
+        ->when($field['complete_begin'], function ($query) use ($field) {
+            return $query->where('PUBLIC_COMPLETION_DATE', '>=', $field['complete_begin']);
+        })
+        ->when($field['complete_end'], function ($query) use ($field) {
+            return $query->where('PUBLIC_COMPLETION_DATE', '<=', $field['complete_end']);
+        })
+        ->groupBy('PUBLIC_SALES_NAME', 'PUBLIC_SUB_BUSINESS_TYPE_NAME')
+        ->orderBy('PUBLIC_SALES_NAME')
+        ->orderBy('PUBLIC_SUB_BUSINESS_TYPE_NAME')
+        ->paginate($data['limit']);
 
         //$accounts = $accounts->appends($field);
         $result['total'] = $accounts->total() ?? 0;

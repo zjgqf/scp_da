@@ -13,6 +13,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
+        "spatie/array-to-xml": "^2.11",
         "yajra/laravel-oci8": "5.7.*"
     },
     "require-dev": {

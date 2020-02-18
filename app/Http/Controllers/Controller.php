@@ -13,9 +13,11 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected $oracle;
+    protected $prd_oracle;
 
     public function __construct()
     {
         $this->oracle = DB::connection('oracle');
+        $this->prd_oracle = DB::connection('prd_oracle');
     }
 }

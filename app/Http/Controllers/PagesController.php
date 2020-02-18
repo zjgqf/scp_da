@@ -8,6 +8,6 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return redirect()->route('accounts.index');
+        return abort(404);
     }
 }

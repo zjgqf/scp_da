@@ -10660,3 +10660,40 @@ a.text-dark:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #000;
+}
+
+.footer .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer .container p {
+  margin: 19px 0;
+  color: #c1c1c1;
+}
+
+.footer .container p a {
+  color: inherit;
+}
+
+.shipmessage {
+  margin-top: 30px;
+}
+

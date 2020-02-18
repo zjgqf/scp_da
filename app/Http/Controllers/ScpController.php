@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class ScpController extends Controller
 {
-
-
     public function userList(Request $request)
     {
         $user = '%'. $request->user. '%';
