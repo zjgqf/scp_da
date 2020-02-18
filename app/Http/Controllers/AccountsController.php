@@ -101,19 +101,21 @@ class AccountsController extends Controller
             return redirect()->route('accounts.index')->with('danger','查询条件不能为空！');
         }
 
-        $accounts = $this->oracle->table('V_FREIGHT_ZJG as BCFR')
-                        ->leftJoin('V_PUBLIC_ORDER_ZJG as BCOR', 'BCFR.BC_PUBLIC_ORDER_ID', '=', 'BCOR.BC_PUBLIC_ORDER_ID')
-                        ->selectRaw('BCOR.PUBLIC_CANVASSION_DEPARTMENT AS department,
-                                                BCOR.PUBLIC_SALES_NAME AS sales,
-                                                BCOR.PUBLIC_CONSIGNOR_NAME AS consignor,
-                                                ROUND(SUM(CASE WHEN BCFR.LEDGER_TYPE_CODE = \'AR\' AND NVL(BCFR.WRITEOFF_STATUS,\'S\') <> \'W\' AND BCFR.OP_TYPE <> \'DELETE\' THEN
-                                                      NVL(BCFR.PRIME_ESTIMATED_SETTLE_AMOUNT * BCFR.BUSINESS_EXCHANGE_RATE, 0) ELSE 0
-                                                      END),2)  AS receive,
-                                                ROUND(SUM((CASE WHEN BCFR.LEDGER_TYPE_CODE = \'AR\' AND NVL(BCFR.WRITEOFF_STATUS,\'S\') <> \'W\' AND BCFR.OP_TYPE <> \'DELETE\' THEN
-                                                      NVL(BCFR.PRIME_ESTIMATED_SETTLE_AMOUNT * BCFR.BUSINESS_EXCHANGE_RATE, 0) ELSE 0
-                                                      END) - (CASE WHEN BCFR.LEDGER_TYPE_CODE = \'AP\' AND NVL(BCFR.WRITEOFF_STATUS,\'S\') <> \'W\' AND BCFR.OP_TYPE <> \'DELETE\' THEN
-                                                      NVL(BCFR.PRIME_ESTIMATED_SETTLE_AMOUNT * BCFR.BUSINESS_EXCHANGE_RATE, 0) ELSE 0
-                                                      END)),2) AS profit')
+        //查询到账利润数据
+        $accounts = $this->oracle->table('BC_FREIGHT as BCFR')
+            ->leftJoin('BC_PUBLIC_ORDER as BCOR', 'BCFR.BC_PUBLIC_ORDER_ID', '=', 'BCOR.BC_PUBLIC_ORDER_ID')
+            ->selectRaw('BCOR.PUBLIC_CANVASSION_DEPARTMENT AS department,
+                                    BCOR.PUBLIC_SALES_NAME AS sales,
+                                    BCOR.PUBLIC_CONSIGNOR_NAME AS consignor,
+                                    ROUND(SUM(CASE WHEN BCFR.LEDGER_TYPE_CODE = \'AR\' THEN
+                                          NVL(BCFR.PRIME_ESTIMATED_SETTLE_AMOUNT * BCFR.BUSINESS_EXCHANGE_RATE, 0) ELSE 0
+                                          END),2)  AS receive,
+                                    ROUND(SUM((CASE WHEN BCFR.LEDGER_TYPE_CODE = \'AR\' THEN
+                                          NVL(BCFR.PRIME_ESTIMATED_SETTLE_AMOUNT * BCFR.BUSINESS_EXCHANGE_RATE, 0) ELSE 0
+                                          END) - (CASE WHEN BCFR.LEDGER_TYPE_CODE = \'AP\' THEN
+                                          NVL(BCFR.PRIME_ESTIMATED_SETTLE_AMOUNT * BCFR.BUSINESS_EXCHANGE_RATE, 0) ELSE 0
+                                          END)),2) AS profit')
+                        ->whereRaw("NVL(BCFR.OP_TYPE,'INSERT') <> ? ", ['DELETE'])
                         ->where('BCOR.IS_VIRTUAL_ORDER', 'N')
                         ->where('BCOR.IS_DELETED', 'N')
                         ->where('BCOR.PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
@@ -134,6 +136,8 @@ class AccountsController extends Controller
                         })
                         ->when($field['check_begin'], function ($query) use ($field) {
                             return $query->whereRaw('SUBSTR(BCFR.CHECK_DATE,1,8) >= ?', [$field['check_begin']]);
+                        }, function ($query) {
+                            return $query->whereRaw("NVL(BCFR.WRITEOFF_STATUS,'S') <> ? ", ['W'] );
                         })
                         ->when($field['check_end'], function ($query) use ($field) {
                             return $query->whereRaw('SUBSTR(BCFR.CHECK_DATE,1,8) <= ?', [$field['check_end']]);
