@@ -48,7 +48,7 @@ class AccountsController extends Controller
                         ->where('BCOR.IS_VIRTUAL_ORDER', 'N')
                         ->where('BCOR.IS_DELETED', 'N')
                         ->where('BCOR.PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
-                        ->where('BCOR.PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
+                        //->where('BCOR.PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
                         ->when($field['department'], function ($query) use ($field) {
                             if($field['department'] !== 'WYCJ_ZJG') {
                                 return $query->where('BCOR.PUBLIC_SALES_DEPARTMENT_CODE', '=', $field['department']);
@@ -119,7 +119,7 @@ class AccountsController extends Controller
                         ->where('BCOR.IS_VIRTUAL_ORDER', 'N')
                         ->where('BCOR.IS_DELETED', 'N')
                         ->where('BCOR.PUBLIC_SETTLE_OFFICE', 'WYCJ_ZJG')
-                        ->where('BCOR.PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
+                        //->where('BCOR.PUBLIC_IS_SHUT_OFF_LOAD', '<>', 'Y')
                         ->when($field['department'], function ($query) use ($field) {
                             if($field['department'] !== 'WYCJ_ZJG') {
                                 return $query->where('BCOR.PUBLIC_SALES_DEPARTMENT_CODE', '=', $field['department']);
