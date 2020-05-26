@@ -32,4 +32,5 @@ Route::get('/shipmessage', 'ShipMessageController@index')->name('shipMessage.ind
 Route::post('/shipmessage', 'ShipMessageController@show')->name('shipMessage.show');
 Route::get('/shipmeaasge/downlad/{file_path}', 'ShipMessageController@download')->name('shipMessage.download');
 
+Route::get('/selfLine', 'DingtalkController@selfLine')->name('Dingtalk.selfLine');
 

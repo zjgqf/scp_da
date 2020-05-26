@@ -19,3 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/user', 'ScpController@userList')->name('Scp.user');
 Route::post('/department', 'ScpController@departmentList')->name('Scp.department');
+
+Route::get('/pushSelfLine', 'DingtalkController@pushSelfLine')->name('Dingtalk.pushSelfLine');
+
+Route::get('/customs','InterfacesController@index')->name('interface.index');
